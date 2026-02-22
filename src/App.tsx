@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import {
-    Zap, TrendingUp, Shield, Clock, Database, ArrowRight,
-    CheckCircle2, Target, Send, Calculator, Building2, ShoppingCart, Users, MessageSquare
+    Zap, TrendingUp, Shield, Clock, Database,
+    CheckCircle2, Target, Calculator, Building2, ShoppingCart, Users, MessageSquare
 } from 'lucide-react';
 
 interface FormData {
