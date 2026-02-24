@@ -50,10 +50,28 @@ export default function App() {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+        
+        try {
+            const response = await fetch('http://localhost:3001/api/submit-form', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+                setFormData({ name: '', phone: '', channels: [], crm: '' });
+            } else {
+                alert('Ошибка отправки. Попробуйте позже.');
+            }
+        } catch (error) {
+            console.error('Ошибка:', error);
+            alert('Ошибка отправки. Проверьте подключение к серверу.');
+        }
     };
 
     return (
