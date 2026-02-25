@@ -17,13 +17,13 @@ export default function App() {
         name: '',
         phone: '',
         channels: [],
-        crm: '' 
+        crm: ''
     });
 
     // --- Состояние калькулятора ---
-    const [calcLeads, setCalcLeads] = useState<number>(500); 
+    const [calcLeads, setCalcLeads] = useState<number>(500);
     const [calcCheck, setCalcCheck] = useState<number>(50000);
-    const [calcConv, setCalcConv] = useState<number>(5); 
+    const [calcConv, setCalcConv] = useState<number>(5);
 
     // --- ЛОГИКА КАЛЬКУЛЯТОРА ---
     const currentRevenue = calcLeads * (calcConv / 100) * calcCheck;
@@ -52,16 +52,16 @@ export default function App() {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        
+
         try {
             const response = await fetch('/api/submit-form', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });
-            
+
             const result = await response.json();
-            
+
             if (result.success) {
                 alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
                 setFormData({ name: '', phone: '', channels: [], crm: '' });
@@ -434,7 +434,7 @@ export default function App() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[700px] bg-violet-900/10 blur-[180px] rounded-full pointer-events-none"></div>
 
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    
+
                     {/* --- ЧАСТЬ 1: КАЛЬКУЛЯТОР --- */}
                     <div className="text-center mb-10 md:mb-16">
                         <h2 className="text-3xl md:text-[44px] font-extrabold tracking-tight text-white mb-4 md:mb-6 leading-tight" style={{ fontFamily: 'Manrope, sans-serif', letterSpacing: '-0.02em' }}>
@@ -453,7 +453,7 @@ export default function App() {
                                         <label className="text-[12px] md:text-[14px] font-bold text-[#A1A1AA] uppercase tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>Входящие лиды (в месяц)</label>
                                         <span className="text-xl md:text-2xl font-bold text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>{calcLeads}</span>
                                     </div>
-                                    <input type="range" min="300" max="5000" step="50" value={calcLeads} onChange={(e) => setCalcLeads(Number(e.target.value))} 
+                                    <input type="range" min="300" max="5000" step="50" value={calcLeads} onChange={(e) => setCalcLeads(Number(e.target.value))}
                                         className="w-full h-2 bg-white/[0.1] rounded-lg appearance-none cursor-pointer accent-violet-500" />
                                 </div>
 
@@ -462,7 +462,7 @@ export default function App() {
                                         <label className="text-[12px] md:text-[14px] font-bold text-[#A1A1AA] uppercase tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>Средний чек</label>
                                         <span className="text-xl md:text-2xl font-bold text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>{formatCurrency(calcCheck)}</span>
                                     </div>
-                                    <input type="range" min="5000" max="500000" step="5000" value={calcCheck} onChange={(e) => setCalcCheck(Number(e.target.value))} 
+                                    <input type="range" min="5000" max="500000" step="5000" value={calcCheck} onChange={(e) => setCalcCheck(Number(e.target.value))}
                                         className="w-full h-2 bg-white/[0.1] rounded-lg appearance-none cursor-pointer accent-violet-500" />
                                 </div>
 
@@ -471,14 +471,14 @@ export default function App() {
                                         <label className="text-[12px] md:text-[14px] font-bold text-[#A1A1AA] uppercase tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>Текущая конверсия в продажу</label>
                                         <span className="text-xl md:text-2xl font-bold text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>{calcConv}%</span>
                                     </div>
-                                    <input type="range" min="1" max="30" step="1" value={calcConv} onChange={(e) => setCalcConv(Number(e.target.value))} 
+                                    <input type="range" min="1" max="30" step="1" value={calcConv} onChange={(e) => setCalcConv(Number(e.target.value))}
                                         className="w-full h-2 bg-white/[0.1] rounded-lg appearance-none cursor-pointer accent-violet-500" />
                                 </div>
                             </div>
 
                             <div className="relative flex flex-col justify-center bg-gradient-to-br from-violet-900/20 to-fuchsia-900/10 border border-violet-500/20 rounded-[20px] md:rounded-[24px] p-6 md:p-8 overflow-hidden">
                                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
-                                
+
                                 <div className="relative z-10 space-y-5 md:space-y-6">
                                     <div>
                                         <div className="text-[#A1A1AA] text-[13px] md:text-sm font-medium mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>Выручка сейчас:</div>
@@ -510,7 +510,7 @@ export default function App() {
 
                     {/* --- ЧАСТЬ 2: ФОРМА --- */}
                     <form onSubmit={handleSubmit} className="bg-white/[0.02] backdrop-blur-md p-6 sm:p-8 md:p-12 rounded-[24px] md:rounded-[32px] border border-white/[0.05] shadow-[0_20px_40px_-20px_rgba(0,0,0,0.5)] max-w-3xl mx-auto relative overflow-hidden">
-                        
+
                         <div className="text-center mb-8 md:mb-10">
                             <h3 className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3" style={{ fontFamily: 'Manrope, sans-serif' }}>Заберите эти деньги в свой бизнес</h3>
                             <p className="text-[#A1A1AA] text-[13px] md:text-sm" style={{ fontFamily: 'Inter, sans-serif' }}>Оставьте телефон, и мы предложим решение для интеграции под вашу нишу.</p>
@@ -520,14 +520,14 @@ export default function App() {
                             <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                                 <div>
                                     <label className="block text-[12px] md:text-[13px] font-bold text-[#A1A1AA] mb-2 uppercase tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>Имя</label>
-                                    <input required name="name" value={formData.name} onChange={handleInputChange} type="text" 
-                                        className="w-full bg-white/[0.03] border border-white/[0.1] rounded-xl px-4 py-3 md:px-5 md:py-4 text-white placeholder-[#64748B] focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.05] focus:ring-1 focus:ring-violet-500/20 transition-all text-sm md:text-base" 
+                                    <input required name="name" value={formData.name} onChange={handleInputChange} type="text"
+                                        className="w-full bg-white/[0.03] border border-white/[0.1] rounded-xl px-4 py-3 md:px-5 md:py-4 text-white placeholder-[#64748B] focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.05] focus:ring-1 focus:ring-violet-500/20 transition-all text-sm md:text-base"
                                         placeholder="Ваше имя" style={{ fontFamily: 'Inter, sans-serif' }} />
                                 </div>
                                 <div>
                                     <label className="block text-[12px] md:text-[13px] font-bold text-[#A1A1AA] mb-2 uppercase tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>Телефон</label>
-                                    <input required name="phone" value={formData.phone} onChange={handleInputChange} type="tel" 
-                                        className="w-full bg-white/[0.03] border border-white/[0.1] rounded-xl px-4 py-3 md:px-5 md:py-4 text-white placeholder-[#64748B] focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.05] focus:ring-1 focus:ring-violet-500/20 transition-all text-sm md:text-base" 
+                                    <input required name="phone" value={formData.phone} onChange={handleInputChange} type="tel"
+                                        className="w-full bg-white/[0.03] border border-white/[0.1] rounded-xl px-4 py-3 md:px-5 md:py-4 text-white placeholder-[#64748B] focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.05] focus:ring-1 focus:ring-violet-500/20 transition-all text-sm md:text-base"
                                         placeholder="+7 (999) 000-00-00" style={{ fontFamily: 'Inter, sans-serif' }} />
                                 </div>
                             </div>
@@ -551,7 +551,7 @@ export default function App() {
                                 <div className="flex flex-wrap gap-2 md:gap-3">
                                     {['amoCRM', 'Bitrix24', 'Своя разработка', 'Пока нет'].map(crmOption => (
                                         <label key={crmOption} className="cursor-pointer relative group">
-                                            <input type="radio" name="crm" value={crmOption} className="peer sr-only" checked={formData.crm === crmOption} onChange={(e) => setFormData(prev => ({...prev, crm: e.target.value}))} />
+                                            <input type="radio" name="crm" value={crmOption} className="peer sr-only" checked={formData.crm === crmOption} onChange={(e) => setFormData(prev => ({ ...prev, crm: e.target.value }))} />
                                             <div className="px-4 py-2.5 md:px-5 md:py-3 rounded-xl border border-white/[0.1] bg-white/[0.03] text-[#A1A1AA] group-hover:border-white/[0.2] peer-checked:bg-[#0F172A] peer-checked:text-white peer-checked:border-violet-500 transition-all font-medium text-[13px] md:text-sm flex items-center gap-2" style={{ fontFamily: 'Inter, sans-serif' }}>
                                                 <div className={`w-3.5 h-3.5 md:w-4 md:h-4 rounded-full border flex items-center justify-center transition-all shrink-0 ${formData.crm === crmOption ? 'border-violet-500' : 'border-white/[0.3] group-hover:border-violet-400'}`}>
                                                     {formData.crm === crmOption && <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-violet-500"></div>}
@@ -562,6 +562,25 @@ export default function App() {
                                     ))}
                                 </div>
                             </div>
+
+                            <label className="flex items-start gap-3 cursor-pointer group">
+                                <input
+                                    type="checkbox"
+                                    required
+                                    className="mt-1 w-4 h-4 shrink-0 rounded border border-white/[0.2] bg-white/[0.05] accent-violet-500 cursor-pointer"
+                                />
+                                <span className="text-[#A1A1AA] text-[13px] leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                    Я даю согласие на обработку моих персональных данных ИП Хакимов Дмитрий Айдарович (ИНН 667356285772, ОГРНИП 323665800057948) в соответствии с{' '}
+                                    <a
+                                        href="/privacy.html"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[#A78BFA] hover:underline"
+                                    >
+                                        Политикой обработки персональных данных
+                                    </a>
+                                </span>
+                            </label>
 
                             <button type="submit" className="group relative w-full flex items-center justify-center gap-3 bg-gradient-to-r from-[#5B21B6] to-[#7C3AED] hover:from-[#6D28D9] hover:to-[#8B5CF6] p-1 rounded-[12px] transition-all duration-300 mt-6 md:mt-4 hover:shadow-[0_0_40px_rgba(139,92,246,0.5)]">
                                 <div className="absolute inset-0 bg-gradient-to-r from-[#5B21B6] to-[#7C3AED] rounded-[12px] blur-lg opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -576,13 +595,38 @@ export default function App() {
             </section>
 
             {/* Footer */}
-            <footer className="py-8 md:py-12 bg-[#0A0E1A] text-center relative z-10 border-t border-white/[0.05] px-4">
-                <div className="flex items-center justify-center gap-2 mb-4 md:mb-6">
-                    <span className="font-extrabold tracking-tight text-xl md:text-2xl bg-gradient-to-r from-[#A855F7] to-[#7C3AED] bg-clip-text text-transparent" style={{ fontFamily: 'Manrope, sans-serif' }}>AI Prosto</span>
+            <footer className="py-8 md:py-10 bg-[#0A0E1A] relative z-10 border-t border-white/[0.05] px-4" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    {/* Left: logo + copyright + company info */}
+                    <div>
+                        <span className="font-extrabold tracking-tight text-xl bg-gradient-to-r from-[#A855F7] to-[#7C3AED] bg-clip-text text-transparent block mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>AI Prosto</span>
+                        <p className="text-[#64748B] text-[12px]">
+                            © {new Date().getFullYear()} AI Prosto. Все права защищены.
+                        </p>
+                        <p className="text-[#64748B] text-[12px] mt-0.5">
+                            ИП Хакимов Дмитрий Айдарович, ИНН 667356285772, ОГРНИП 323668800057948
+                        </p>
+                    </div>
+                    {/* Right: links */}
+                    <div className="flex flex-col gap-1.5">
+                        <a
+                            href="/privacy.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#A1A1AA] hover:text-[#A78BFA] text-[12px] transition-colors duration-200 text-left md:text-right"
+                        >
+                            Политика конфиденциальности
+                        </a>
+                        <a
+                            href="/consent.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#A1A1AA] hover:text-[#A78BFA] text-[12px] transition-colors duration-200 text-left md:text-right"
+                        >
+                            Согласие на обработку персональных данных
+                        </a>
+                    </div>
                 </div>
-                <p className="text-[#64748B] text-[12px] md:text-sm" style={{ fontFamily: 'Inter, sans-serif' }}>
-                    © {new Date().getFullYear()} Все права защищены. Интеграция систем искусственного интеллекта.
-                </p>
             </footer>
         </div>
     );

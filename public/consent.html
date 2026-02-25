@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Согласие на обработку персональных данных — AI Prosto</title>
+    <meta name="description" content="Политика и согласие на обработку персональных данных сайта AI Prosto." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0A0E1A;
+            color: #F8FAFC;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.75;
+            min-height: 100vh;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(10, 14, 26, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 0 24px;
+        }
+
+        .header-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            background: linear-gradient(135deg, #A855F7, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .back-link {
+            font-size: 13px;
+            color: #A1A1AA;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #F8FAFC;
+        }
+
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 52px 24px 88px;
+        }
+
+        /* --- Block dividers --- */
+        .doc-block {
+            margin-bottom: 64px;
+            padding-bottom: 64px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .doc-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .page-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #A78BFA;
+            background: rgba(91, 33, 182, 0.12);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 6px;
+            padding: 4px 10px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #F2F2F2;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #E2E8F0;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .section {
+            margin-bottom: 32px;
+        }
+
+        p {
+            font-size: 15px;
+            color: #A1A1AA;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 10px 0;
+        }
+
+        ul li {
+            font-size: 15px;
+            color: #A1A1AA;
+            padding: 5px 0 5px 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #7C3AED;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-top: 12px;
+        }
+
+        .info-card p {
+            margin-bottom: 6px;
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Consent cards */
+        .term-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-left: 3px solid #7C3AED;
+            border-radius: 0 12px 12px 0;
+            padding: 18px 22px;
+            margin-bottom: 14px;
+        }
+
+        .term-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #C4B5FD;
+            margin-bottom: 8px;
+        }
+
+        /* Checkbox demo */
+        .checkbox-demo {
+            background: rgba(91, 33, 182, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 14px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .checkbox-demo input[type="checkbox"] {
+            margin-top: 3px;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            accent-color: #7C3AED;
+            cursor: pointer;
+        }
+
+        a {
+            color: #A78BFA;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            color: #E2E8F0;
+        }
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 24px;
+            text-align: center;
+            color: #64748B;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">AI Prosto</a>
+            <a href="/" class="back-link">← На главную</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===== ЧАСТЬ 1: ПОЛИТИКА ===== -->
+        <div class="doc-block">
+            <div class="page-tag">Юридический документ</div>
+            <h1>Политика в отношении обработки персональных данных</h1>
+            <p>
+                Настоящая Политика в отношении обработки персональных данных (далее — «Политика») действует для сайта
+                <a href="https://www.ai-prosto.online/" target="_blank" rel="noopener">https://www.ai-prosto.online/</a>
+                (далее — «Сайт») и определяет порядок обработки и защиты персональных данных пользователей.
+            </p>
+
+            <div class="section" style="margin-top:32px;">
+                <h2>1. Термины</h2>
+                <ul>
+                    <li><strong>Персональные данные</strong> — любая информация, относящаяся к прямо или косвенно
+                        определяемому физическому лицу.</li>
+                    <li><strong>Оператор</strong> — лицо, организующее и/или осуществляющее обработку персональных
+                        данных.</li>
+                    <li><strong>Обработка</strong> — любое действие (операция) или совокупность действий с персональными
+                        данными (сбор, запись, систематизация, хранение, использование, передача, удаление и т.д.).</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. Кто обрабатывает данные (Оператор)</h2>
+                <div class="info-card">
+                    <p><strong>ИП Хакимов Дмитрий Айдарович</strong></p>
+                    <p>ИНН: 667356285772</p>
+                    <p>ОГРНИП: 323665800057948</p>
+                    <p>Адрес: г. Екатеринбург, ул. Бабшкина, 45</p>
+                    <p>E-mail для обращений по персональным данным: <a
+                            href="mailto:khakimov.d@inbox.ru">khakimov.d@inbox.ru</a></p>
+                    <p>Телефон: <a href="tel:+79002676997">+7 900 267 69 97</a></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>3. Какие данные мы можем собирать</h2>
+                <p><strong>3.1. Данные, которые пользователь предоставляет сам:</strong></p>
+                <ul>
+                    <li>имя/ФИО (если указано), телефон, e-mail;</li>
+                    <li>текст сообщения/заявки;</li>
+                    <li>иные сведения, которые пользователь добровольно указывает в формах Сайта.</li>
+                </ul>
+                <p><strong>3.2. Технические данные (при посещении Сайта):</strong></p>
+                <ul>
+                    <li>IP-адрес, cookie, данные браузера и устройства, дата/время доступа, страницы перехода
+                        (referrer), сведения о действиях на Сайте.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. Цели обработки персональных данных</h2>
+                <p>Мы обрабатываем персональные данные строго для следующих целей:</p>
+                <ul>
+                    <li>обработка заявок и обращений пользователя;</li>
+                    <li>обратная связь с пользователем (звонок, e-mail, мессенджер — если пользователь сам указал
+                        контакт);</li>
+                    <li>подготовка и направление ответа/коммерческого предложения/расчёта/консультации по запросу
+                        пользователя;</li>
+                    <li>улучшение работы Сайта, аналитика и статистика (при использовании счетчиков/аналитики);</li>
+                    <li>выполнение требований законодательства Российской Федерации.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>5. Правовые основания обработки</h2>
+                <p>Обработка осуществляется на основании:</p>
+                <ul>
+                    <li>согласия пользователя на обработку персональных данных (в т.ч. через проставление
+                        галочки/нажатие кнопки на Сайте);</li>
+                    <li>иных оснований, предусмотренных законодательством РФ (при наличии).</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. Порядок и условия обработки</h2>
+                <p>6.1. Обработка может осуществляться с использованием средств автоматизации или без них.</p>
+                <p>6.2. Мы не запрашиваем и не обрабатываем специальные категории персональных данных (о здоровье,
+                    биометрические данные и т.п.). Просим не направлять такие сведения через формы Сайта.</p>
+                <p>6.3. Мы не принимаем решения, порождающие юридические последствия для пользователя, исключительно на
+                    основе автоматизированной обработки, если иное прямо не предусмотрено законодательством РФ.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. Передача данных третьим лицам</h2>
+                <p>7.1. Мы можем поручать обработку/передавать данные третьим лицам, если это необходимо для целей,
+                    указанных в Политике, например: хостинг, корпоративная почта, CRM, сервисы аналитики, подрядчики по
+                    сопровождению Сайта.</p>
+                <p>7.2. Передача осуществляется при наличии правовых оснований и при соблюдении требований безопасности.
+                </p>
+                <p>Используемые сервисы/получатели (если применимо): [при желании перечисли: хостинг, CRM, почта,
+                    Метрика и т.п.]</p>
+            </div>
+
+            <div class="section">
+                <h2>8. Сроки хранения</h2>
+                <p>Персональные данные хранятся:</p>
+                <ul>
+                    <li>до достижения целей обработки, либо</li>
+                    <li>до отзыва согласия пользователем, либо</li>
+                    <li>в сроки, установленные законодательством РФ (если применимо).</li>
+                </ul>
+                <p>После достижения целей данные удаляются/обезличиваются, если их дальнейшее хранение не требуется по
+                    закону.</p>
+            </div>
+
+            <div class="section">
+                <h2>9. Права пользователя</h2>
+                <p>Пользователь вправе:</p>
+                <ul>
+                    <li>запросить сведения об обработке своих данных;</li>
+                    <li>потребовать уточнения, блокирования или удаления данных;</li>
+                    <li>отозвать согласие на обработку персональных данных.</li>
+                </ul>
+                <p>Отзыв согласия направляется на e-mail: <a href="mailto:khakimov.d@inbox.ru">khakimov.d@inbox.ru</a> с
+                    темой письма «Отзыв согласия на обработку ПДн».</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Меры защиты персональных данных</h2>
+                <p>Мы принимаем необходимые правовые, организационные и технические меры для защиты персональных данных
+                    от неправомерного доступа, изменения, раскрытия или уничтожения, включая:</p>
+                <ul>
+                    <li>ограничение доступа к данным;</li>
+                    <li>использование паролей и (при наличии) двухфакторной аутентификации;</li>
+                    <li>использование защищённого соединения (HTTPS), при наличии;</li>
+                    <li>резервное копирование, при наличии;</li>
+                    <li>обновление ПО и контроль доступа.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>11. Cookie и аналитика</h2>
+                <p>Сайт может использовать cookie и (при наличии) сервисы аналитики для улучшения работы. Пользователь
+                    может отключить cookie в настройках браузера, однако это может повлиять на работоспособность
+                    отдельных функций Сайта.</p>
+            </div>
+
+            <div class="section">
+                <h2>12. Изменение Политики</h2>
+                <p>Оператор вправе обновлять Политику. Актуальная версия всегда размещается на Сайте по адресу:
+                    <a href="https://www.ai-prosto.online/privacy" target="_blank"
+                        rel="noopener">https://www.ai-prosto.online/privacy</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== ЧАСТЬ 2: ТЕКСТ ЧЕКБОКСА ===== -->
+        <div class="doc-block">
+            <div class="page-tag">Текст для чекбокса в форме</div>
+            <h1 style="font-size: clamp(20px, 4vw, 28px); margin-bottom: 20px;">Согласие при отправке формы</h1>
+            <div class="checkbox-demo">
+                <input type="checkbox" checked readonly />
+                <p style="margin:0; font-size:14px;">
+                    Я даю согласие на обработку моих персональных данных ИП Хакимов Дмитрий Айдарович (ИНН 667356285772,
+                    ОГРНИП 323665800057948) в соответствии с Политикой обработки персональных данных:
+                    <a href="https://www.ai-prosto.online/privacy" target="_blank"
+                        rel="noopener">https://www.ai-prosto.online/privacy</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== ЧАСТЬ 3: СОГЛАСИЕ НА ОБРАБОТКУ ===== -->
+        <div class="doc-block">
+            <div class="page-tag">Юридический документ</div>
+            <h1>Согласие на обработку персональных данных</h1>
+            <p style="margin-top:16px; margin-bottom:32px;">
+                Я, пользователь сайта <a href="https://www.ai-prosto.online/" target="_blank"
+                    rel="noopener">https://www.ai-prosto.online/</a>,
+                действуя свободно, своей волей и в своём интересе,
+                предоставляю <strong>ИП Хакимову Дмитрию Айдаровичу</strong> (ИНН 667356285772, ОГРНИП 323665800057948,
+                адрес: г. Екатеринбург, ул. Бабшкина, 45)
+                согласие на обработку моих персональных данных на следующих условиях:
+            </p>
+
+            <div class="term-item">
+                <div class="term-label">Перечень персональных данных</div>
+                <p style="margin:0; font-size:15px; color:#A1A1AA;">Имя/ФИО (при указании), телефон, e-mail, содержание
+                    обращения (сообщения), а также технические данные (IP, cookie, данные браузера/устройства).</p>
+            </div>
+
+            <div class="term-item">
+                <div class="term-label">Цели обработки</div>
+                <p style="margin:0; font-size:15px; color:#A1A1AA;">Обработка обращения/заявки, обратная связь,
+                    подготовка ответа/предложения/расчёта/консультации, улучшение работы сайта и аналитика (если
+                    используется).</p>
+            </div>
+
+            <div class="term-item">
+                <div class="term-label">Действия с данными</div>
+                <p style="margin:0; font-size:15px; color:#A1A1AA;">Сбор, запись, систематизация, хранение, уточнение,
+                    использование, передача (предоставление/доступ) третьим лицам при необходимости, блокирование,
+                    удаление, уничтожение.</p>
+            </div>
+
+            <div class="term-item">
+                <div class="term-label">Способ обработки</div>
+                <p style="margin:0; font-size:15px; color:#A1A1AA;">С использованием средств автоматизации и/или без
+                    использования таких средств.</p>
+            </div>
+
+            <div class="term-item">
+                <div class="term-label">Срок действия согласия</div>
+                <p style="margin:0; font-size:15px; color:#A1A1AA;">До достижения целей обработки или до отзыва
+                    согласия.</p>
+            </div>
+
+            <div class="term-item">
+                <div class="term-label">Отзыв согласия</div>
+                <p style="margin:0; font-size:15px; color:#A1A1AA;">
+                    Согласие может быть отозвано путём направления письма на
+                    <a href="mailto:khakimov.d@inbox.ru">khakimov.d@inbox.ru</a>
+                    с темой «Отзыв согласия на обработку ПДн».
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 AI Prosto. Все права защищены. ИП Хакимов Дмитрий Айдарович, ИНН 667356285772
+    </footer>
+
+</body>
+
+</html>
